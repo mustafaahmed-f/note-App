@@ -1,0 +1,11 @@
+.add-data {
+  background-color: var(--Dark-color);
+}
+
+p{
+  margin:0 !important;
+}
+
+input.ng-dirty.ng-invalid {
+  color: red
+}

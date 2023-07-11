@@ -1,0 +1,36 @@
+<div class="py-5">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-8 ">
+        <div class="add-data p-2 p-md-5  rounded-3">
+          <h3 class="text-white my-3">Add note : </h3>
+          <form [formGroup]="addForm" class="form" (ngSubmit)="add(addForm)">
+            <label for="title" class="form-label mt-2 text-white">Title :</label>
+          <input formControlName="title" type="text" id="title" value="" placeholder="enter your new title .." class="form-control" [value]="noteTitle">
+
+          <div class="alert alert-danger my-2" *ngIf="addForm.get('title')?.errors &&
+          addForm.get('title')?.touched">
+          <p *ngIf="addForm.get('title')?.getError('required')">title is required</p>
+            <p *ngIf="addForm.get('title')?.getError('minlength')">Min length : 1</p>
+            <p *ngIf="addForm.get('title')?.getError('pattern')">title only contains (Capital letters , small letters or numbers) and starts with letter</p>
+            <p *ngIf="addForm.get('title')?.getError('maxlength')">Max length : 24</p>
+          </div>
+
+          <label for="content" class="form-label mt-2 text-white">Content :</label>
+          <textarea formControlName="content" id="content" class="form-control" cols="30" rows="14" placeholder="enter your new content .." [value]="noteContent"></textarea>
+
+          <div class="alert alert-danger my-2" *ngIf="addForm.get('content')?.errors &&
+          addForm.get('content')?.touched">
+          <p *ngIf="addForm.get('content')?.getError('required')">content is required</p>
+            <p *ngIf="addForm.get('content')?.getError('minlength')">Min length : 10</p>
+            <p *ngIf="addForm.get('content')?.getError('pattern')">content only contains (Capital letters , small letters or numbers)</p>
+          </div>
+
+          <button class="btn btn-success my-4" type="submit" [disabled]="addForm.invalid">Add</button>
+          <p class="text-danger">{{errorMessage}}</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

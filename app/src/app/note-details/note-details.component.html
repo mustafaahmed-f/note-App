@@ -1,0 +1,19 @@
+
+
+<div class="py-5 d-flex justify-content-center align-items-center position-relative">
+
+
+    <div class="container">
+      <div class="col-md-7 m-auto">
+        <div class="note-details text-center p-5 text-white">
+          <h3 class="my-2 fw-bold note-title"># {{noteID}}</h3>
+          <h3 class="my-3 fw-bold">>> {{noteTitle}} <<</h3>
+          <p class="my-4 fw-light">{{noteContent}}</p>
+          <div class="buttons py-3 d-flex justify-content-center align-items-center mx-auto">
+            <button class="btn btn-success rounded-2 mx-1" [routerLink]="['/update',noteID]">Update</button>
+            <button class="btn btn-danger rounded-2 mx-1" (click)="deleteNote(noteID)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

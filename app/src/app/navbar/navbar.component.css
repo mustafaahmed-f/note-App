@@ -1,0 +1,256 @@
+nav{
+  background-color: var(--Dark-color) !important;
+
+}
+
+ul{
+  width: fit-content !important;
+}
+#navBar{
+  width: fit-content !important;
+}
+
+ul li{
+  margin: 0 8px;
+}
+
+ul li a{
+  color: white !important;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.navbar-toggler-icon{
+  background-color: white !important;
+}
+.navbar-toggler{
+  color: white !important;
+  border-color: white !important;
+  border-width: 3px;
+
+}
+/* Dark mood button  */
+
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #73C0FC;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  left: 2px;
+  bottom: 2px;
+  z-index: 2;
+  background-color: #e8e8e8;
+  transition: .4s;
+}
+
+.sun svg {
+  position: absolute;
+  top: 6px;
+  left: 36px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.moon svg {
+  fill: #73C0FC;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+/* .switch:hover */.sun svg {
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .switch:hover */.moon svg {
+  animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.input:checked + .slider {
+  background-color: #183153;
+}
+
+.input:focus + .slider {
+  box-shadow: 0 0 1px #183153;
+}
+
+.input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+/* search button */
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+}
+
+.input {
+  border-style: none;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  outline: none;
+  border-color: transparent;
+  border-radius: 50%;
+  transition: .5s ease-in-out;
+  background-color: transparent;
+  box-shadow: 0px 0px 3px #f3f3f3;
+  padding-right: 40px;
+  color: #fff;
+}
+
+.input::placeholder,
+.input {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 17px;
+}
+
+.input::placeholder {
+  color: #8f8f8f;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border-style: none;
+  border-radius: 50%;
+  pointer-events: painted;
+  background-color: transparent;
+  transition: .2s linear;
+}
+
+.icon:focus ~ .input,
+.input:focus {
+  box-shadow: none;
+  width: 250px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 3px solid #7e4fd4;
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+.searchBtn{
+  transform: scale(1);
+}
+
+@media screen and (max-width :768px ) {
+  .searchBtn{
+    transform: scale(0.75);
+  }
+  .searchBtn .input:checked{
+    width:50%;
+  }
+}
+
+
+/* card */
+
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;500&display=swap");
+
+
+.card{
+  min-height: 300px;
+  width: 195px;
+  position: absolute;
+  top: 80px;
+  right:20px;
+  overflow-wrap: break-word;
+  transform: scale(0);
+  transform-origin: top right;
+
+}
+
+.active{
+  transform: scale(1);
+  transition: all 0.4s linear;
+}
+
+.card img{
+  mix-blend-mode: normal;
+  border-radius: 50%;
+}
+
+p{
+  margin-bottom: 0;
+
+
+}
+.profile-info{
+  background-color: #8f8f8f;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  /* padding: 0 8px !important; */
+
+}

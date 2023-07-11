@@ -1,0 +1,19 @@
+{
+  "name": "mustafaahmed_sat10am_assignment4_01156590999",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "expresss": "^0.0.0",
+    "mysql2": "^3.4.0"
+  }
+}

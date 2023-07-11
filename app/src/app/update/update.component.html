@@ -1,0 +1,37 @@
+<div class="py-5">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-8 ">
+        <div class="update-data p-2 p-md-5  rounded-3">
+          <h3 class="text-white my-3">Update note : </h3>
+          <p class="my-1 text-warning">*Hint : If you left fields empty or you didn't change values , old values will be applied automatically !</p>
+          <form [formGroup]="updateForm" class="form" (ngSubmit)="update()">
+            <label for="title" class="form-label text-white mt-2">Title :</label>
+          <input formControlName="title" type="text" id="title" value="" placeholder="enter your new title .." class="form-control" [value]="noteTitle">
+
+          <div class="alert alert-danger my-2" *ngIf="updateForm.get('title')?.errors &&
+          updateForm.get('title')?.touched">
+          
+            <p *ngIf="updateForm.get('title')?.getError('minlength')">Min length : 1</p>
+            <p *ngIf="updateForm.get('title')?.getError('pattern')">title only contains (Capital letters , small letters or numbers) and starts with letter</p>
+            <p *ngIf="updateForm.get('title')?.getError('maxlength')">Max length : 24</p>
+          </div>
+
+          <label for="content" class="form-label text-white mt-2">Content :</label>
+          <textarea formControlName="content" id="content" class="form-control" cols="30" rows="14" placeholder="enter your new content .." [value]="noteContent"></textarea>
+
+          <div class="alert alert-danger my-2" *ngIf="updateForm.get('content')?.errors &&
+          updateForm.get('content')?.touched">
+
+            <p *ngIf="updateForm.get('content')?.getError('minlength')">Min length : 10</p>
+            <p *ngIf="updateForm.get('content')?.getError('pattern')">content only contains (Capital letters , small letters or numbers)</p>
+          </div>
+
+          <button class="btn btn-success my-4" type="submit" [disabled]="updateForm.invalid">Update</button>
+          <p class="text-danger">{{errorMessage}}</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
